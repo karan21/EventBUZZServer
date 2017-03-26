@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  date: 2017-03-23
+  time: 2017-03-23 02:12:48
+  capacity: 1
+  venue: MyText
+  duration: 1
+  city: MyString
+  image: MyString
+
+two:
+  name: MyString
+  description: MyText
+  date: 2017-03-23
+  time: 2017-03-23 02:12:48
+  capacity: 1
+  venue: MyText
+  duration: 1
+  city: MyString
+  image: MyString
