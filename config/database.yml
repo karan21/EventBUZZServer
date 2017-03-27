@@ -12,7 +12,7 @@ development:
  # socket: /tmp/mysql.sock
 test:
   adapter: mysql2
-  database: EventBUZZ
+  database: EventBUZZ_test
   username: root
   host: localhost
  # socket: /tmp/mysql.sock
