@@ -13,7 +13,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        print @user.attributes.keys
         format.json { render json: @user.as_json(:auth_token=>@user.authenticatable_salt, :email=>@user.email), :status=>201}
       else
         format.json { render json: @user.errors, notice: 'Error.' }
@@ -49,8 +48,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    # devise_parameter_sanitizer.permit(:sign_up) << User.column_names
-    print "called sani**************************r"
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :city, :date_of_birth, :sex])
   end
 

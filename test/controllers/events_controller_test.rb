@@ -7,7 +7,6 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
 
   test "should get index" do
     get events_url
-    print "hello"
     print events_url
     assert_response :success
   end

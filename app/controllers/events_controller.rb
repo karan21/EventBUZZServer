@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def upload_image
-    name = Time.now.to_s  #params[:question][:image].original_filename
+    name = Time.now.to_s
     directory = "public/images"
     path = File.join(directory, name)
     File.open(path, "wb"){|f| f.write(params[:event][:image].read)}
@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.where("date > ?", Date.today).limit(10)
+    @events = Event.where("date >= ?", Date.today).limit(10)
   end
 
   # GET /events/1
