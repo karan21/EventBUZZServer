@@ -7,7 +7,7 @@ class EventTest < ActiveSupport::TestCase
 
   fixtures :events
 
-   def test_book
+   def test_event
 
       event = Event.new :name => events(:one).name, 
          :date => events(:one).date,

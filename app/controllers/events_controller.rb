@@ -71,6 +71,21 @@ class EventsController < ApplicationController
     end
   end
 
+  # POST /events/newsfeed.json
+  def newsfeed
+    email = params[:email]
+    user = User.find_by_email(email)
+    interests = user.interests
+    categoryEvents = Hash.new
+    interests.each do |interest|
+      event = Event.where("date >= ? AND category = ?",Date.today, interest.interest)
+      categoryEvents[interest.interest] = event
+    end
+    respond_to do |format|
+      format.json { render json: categoryEvents.as_json }
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
