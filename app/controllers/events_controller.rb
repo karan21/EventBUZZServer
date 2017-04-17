@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.where("date >= ?", Date.today).limit(10)
+    @events = Event.where("date >= ?", Date.today).limit(20)
   end
 
   # GET /events/1
